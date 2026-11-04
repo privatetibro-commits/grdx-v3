@@ -369,6 +369,8 @@ footer .fph{font:800 2rem var(--disp);color:#fff;margin:14px 0 4px}
 footer.weave{background:linear-gradient(rgba(10,10,11,.82),rgba(10,10,11,.9)),#0A0A0B url(/grdx-v3/img/brand/grdx-weave-tile.png) 0 0/120px 120px}
 footer a,footer p{color:#c3c7cd}
 footer .fshield{height:96px;margin-bottom:14px}
+.phero:not(.weave)::before{background:linear-gradient(90deg,rgba(10,10,11,.93) 0%,rgba(10,10,11,.78) 38%,rgba(10,10,11,.28) 68%,rgba(10,10,11,.12) 100%),linear-gradient(0deg,rgba(10,10,11,.55),transparent 35%)}
+.phero:not(.weave) .pbadge{opacity:.0}
 .phero .pbadge{position:absolute;right:max(32px,env(safe-area-inset-right,0px));top:40px;width:220px;opacity:.14;z-index:0}
 .phero.weave::before{background:linear-gradient(90deg,rgba(10,10,11,.92),rgba(10,10,11,.6))}
 .hubgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -379,6 +381,21 @@ footer .fshield{height:96px;margin-bottom:14px}
 .hubgrid h3{font-size:1.15rem}.hubgrid p{color:var(--mut);font-size:.95rem}
 .hubgrid .more{margin-top:auto;color:var(--blueT);font-weight:600;font-size:.9rem;display:flex;gap:6px;align-items:center}
 .form.on-page{border:1px solid var(--line)}
+.ptabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.ptabs button{font:600 .95rem var(--body);padding:11px 18px;border-radius:40px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.ptabs button[aria-selected=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ppanel{display:none;background:#fff;border:1px solid var(--line);border-radius:4px;padding:30px;position:relative;overflow:hidden}
+.ppanel.on{display:block}
+.ppanel::after{content:'';position:absolute;top:16px;right:-14px;width:70px;height:7px;background:var(--blue);transform:skewX(-48deg)}
+.pintro{color:var(--mut);font-size:1.04rem;margin-bottom:20px;max-width:62ch}
+.psteps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:ps}
+.psteps li{counter-increment:ps;border-top:3px solid var(--blue);padding-top:14px}
+.psteps li::before{content:counter(ps);display:block;font:800 1.6rem/1 var(--disp);color:var(--blueT);margin-bottom:8px}
+.psteps b{display:block;font-size:1.06rem;margin-bottom:6px}
+.psteps span{color:var(--mut);font-size:.96rem}
+@media (max-width:900px){.psteps{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.psteps{grid-template-columns:1fr}.ppanel{padding:22px}}
+
 .cards3.n4{grid-template-columns:1fr 1fr}.cards3.n2{grid-template-columns:1fr 1fr}
 .carshot{background:var(--steel);border-radius:4px;padding:30px;margin:10px 0 24px}
 @media (max-width:1020px){.hero .hslash{display:none}.hero .badge{width:62%;padding-bottom:28px}.hubgrid{grid-template-columns:1fr 1fr}.phero .pbadge{width:130px}.logo img{height:20px}}

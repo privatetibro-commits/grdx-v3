@@ -26,3 +26,5 @@ const to=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return
 document.querySelectorAll('.pr>section[id]').forEach(s=>to.observe(s));
 if(!RM&&matchMedia('(pointer:fine)').matches)document.querySelectorAll('.btn').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.1}px,${(e.clientY-r.top-r.height/2)*.18}px)`});b.addEventListener('pointerleave',()=>b.style.transform='')});
 function sent(f){[...f.children].forEach(c=>{if(!c.classList.contains('ok'))c.style.display='none'});f.querySelector('.ok').style.display='block';return false}
+
+document.querySelectorAll('.ptabs button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.ptabs button').forEach(x=>x.setAttribute('aria-selected',x===b));document.querySelectorAll('.ppanel').forEach(p=>p.classList.toggle('on',p.id===b.dataset.p))}));
